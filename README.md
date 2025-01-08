@@ -1,1 +1,1 @@
-# knowledge-graph-compression-transformers
+# Knowledge Graph Compression Using Graph Transformers Website
