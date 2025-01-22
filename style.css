@@ -96,6 +96,17 @@ body {
   border-radius: 5px;
 }
 
+p{
+  margin-left:15px;
+}
+
+.subtitle {
+  margin-left:15px;
+}
+
+img{
+  margin-left:15px;
+}
 
 /*CONTENT*/
 .content {
