@@ -195,6 +195,27 @@ section {
 }
 
 
+/* Initial hidden state */
+/* Initial state for all sections */
+.fade-section {
+  opacity: 0; /* Fully transparent initially */
+  transform: translateY(20px); /* Slight downward movement */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transitions */
+}
+
+/* When a section is visible */
+.fade-section.visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Reset position */
+}
+
+/* When a section is fading out */
+.fade-section.fading-out {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slight downward movement */
+}
+
+
   :root {
     --sidebar-bg: #5D7559; /* Sidebar background */
     --header-bg: #B4CBA3; /* Header background */
@@ -205,6 +226,17 @@ section {
     --sidebar-width: 175px;
     --general-bg-color:#EFF3EC;
     --header-color: #4B4A4A;
+    --chestnut-color: #986960;
+    --rose-color: #ab4e52;
+    --spanish-white: #faf6ed;
+    --coral-reef: #c8bea0;
+    --neural-white:#f1f2ec;
+ 
+    --gray-asparagus: #454f45;
+    --pixie-green: #bcd5b0;
+    --stack: #858985;
+    --inch-worm: #87f031;
+    
     
   }
   
