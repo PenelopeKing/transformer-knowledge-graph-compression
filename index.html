@@ -24,21 +24,51 @@
               <h1>Knowledge Graph Compression Using Graph Transformers</h1>
               <h3>Quentin Callahan, Esther Cho, Penny King</h3>
               <div class="buttons">
-                <a href="#github" class="button">GitHub Repo</a>
-                <a href="#paper" class="button">Paper</a>
-                <a href="#poster" class="button">Poster</a>
+                <a href="https://github.com/PenelopeKing/Efficient-Common-Sense-in-LLMs-via-Knowledge-Graph-Compression" target="_blank" class="button">GitHub Repo</a>
+                <a href="#paper" target="_blank" class="button">Paper</a>
+                <a href="#poster" target="_blank" class="button">Poster</a>
               </div>
             </div>
             </div>
             <div class="content">
+              <div class = "content2" >
               <section class="fade-section" id="problem">
                 <h2>THE PROBLEM</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
+                <img class = 'img' src="graph-placeholder.png" alt="problem statement representation" >
+                
+                <p>
+                  Large language models (LLMs)–like OpenAI's ChatGPT or Meta's Llama–are incredibly powerful and have high potential in applications. However they sometimes struggle with common sense. LLMs learn from vast amounts of text, but can sometimes fail to grasp implicit relationships between concepts.
+                </p>
+                <p>
+                  To help with this, data scientists use <b>knowledge graphs</b>, which are structured graph networks of information that connect concepts to each other along with their relationships. For example, how a “dog” (concept 1) “is a” (relationship) "mammal" (concept 2). 
+                </p>
 
-                  Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
-                  
-                  Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.</p>
-                <img src="graph-placeholder.png" alt="Graph representation" style="width:100%;max-width:400px;">
+                <img class = 'img'  src="assets/figures/example_kg.png" alt="a small knowledge graph" >
+          
+
+                <p>But there’s one “big” problem: these graphs are REALLY REALLY BIG.</p>
+
+                
+                <p>
+                  Processing them and using them to train LLMs is slow, expensive, and inefficient. 
+                  <em>So, how can we compress these knowledge graphs to be smaller, faster, and still effective at teaching common sense to LLMs?
+                  </em>
+                  </p>
+
+                  <h3 class="subtitle">Our Solution: Transformers</h3>
+                   
+                  <p>Transformers (specifically Graph Transformers) may be the solution for compressing knowledge graphs.
+                    
+                  Graph Transformers are a type of deep learning model that extensd the transformer architecture to work with graph structured data. It uses the power of self-attention mechanisms and graph learning to complex complex relationships between nodes in a graph.  
+                  Although they require hefty computational power, transformers are especially great at handling long-range and complex relationships especially on large graphs.  
+
+                  </p>
+
+                  <p>
+                    Being able to feed commonsense into LLMs in a more efficient and effective manner through compressed knowledge graphs can lead to better virtual assistants, improved AI decision making, and more natural interactions with technology.
+                  </p>
+                
+            
               </section>
               <section class="fade-section" id="data">
                 <h2>THE DATA</h2>
@@ -59,13 +89,13 @@
               </section>
               <section class="fade-section" id="project">
                 <h2>THE PROJECT</h2>
-                <h3 class="subtitle">Subtitle 1</h3>
+                <h3 class="subtitle">Methods</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
 
                   Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
                   
                   Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.</p>
-                <h3 class="subtitle">Subtitle 2</h3>
+                <h3 class="subtitle">Results</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
 
                   Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
@@ -81,36 +111,46 @@
                     Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.
 
                   </p>
+
+                  <h3 class="subtitle">Conclusion</h3>
+                  <p>TEXT HERE</p>
+
               </section>
+              </div>
 
               <section id="team" class="team">
                 <h2>THE TEAM</h2>
-                <div class="spacer"></div>
                 <div class="team-members">
                   <div class="team-member">
                     <div class="member-image">
-                      <img src="placeholder.png" alt="Quentin Callahan">
+                      <img src="assets/pics/quentin.jpeg" alt="Quentin Callahan">
                     </div>
                     <h3>Quentin Callahan</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem massa, bibendum id tortor ut, feugiat tincidunt elit.</p>
+                    <p>Data Science Major</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vestibulum vitae sapien ut leo gravida ultricies non eget velit. Learn more <a href="https://example.com/" target="_blank">here</a>.</p>
+
                   </div>
                   <div class="team-member">
                     <div class="member-image">
-                      <img src="placeholder.png" alt="Esther Cho">
+                      <img src="assets/pics/esther.jpeg" alt="Esther Cho">
                     </div>
                     <h3>Esther Cho</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem massa, bibendum id tortor ut, feugiat tincidunt elit.</p>
+                    <p>Data Science Major & Math Minor</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vestibulum vitae sapien ut leo gravida ultricies non eget velit. Learn more <a href="https://example.com/" target="_blank">here</a>.</p>
+
                   </div>
                   <div class="team-member">
                     <div class="member-image">
-                      <img src="placeholder.png" alt="Penny King">
+                      <img src="assets/pics/penny.JPG" alt="Penny King">
                     </div>
                     <h3>Penny King</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem massa, bibendum id tortor ut, feugiat tincidunt elit.</p>
+                    <p>Data Science Major</p>
+                    <p>Penny is interested in the applications of graph theory in data science. Outside of data science, she enjoys to read historical fiction novels and explore tea cultures from around the world. Learn more about her <a href="https://penelopeking.github.io/" target="_blank">here</a>                      .</p>
                   </div>
                 </div>
-                <div class="spacer"></div>
+
                 <div class="special-thanks">
+                  
                   <p>We would like to give a special thanks to our mentors:</p>
                   <p><strong>Yusu Wang & Gal Mishne</strong></p>
                 </div>

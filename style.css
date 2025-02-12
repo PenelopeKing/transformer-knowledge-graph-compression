@@ -5,9 +5,10 @@ body {
     padding: 0;
     display: flex;
     overflow-x: hidden; /* Prevent horizontal scrollbars */
+    font-size:18px;
   }
 
-  /* General button styling */
+/* General button styling */
 .button {
   display: inline-block; /* Ensures proper button dimensions */
   text-decoration: none; /* Removes underline from links */
@@ -16,7 +17,7 @@ body {
   padding: 15px 20px; /* Padding for button size */
   margin: 5px; /* Spacing between buttons */
   border-radius: 5px; /* Rounded corners */
-  font-size: 14px; /* Adjust text size */
+  font-size: 18px; /* Adjust text size */
   text-align: center; /* Center-align text */
   transition: background-color 0.3s ease; /* Smooth hover effect */
 }
@@ -33,7 +34,7 @@ body {
 .header {
   background-color: var(--header-bg); /* Background color */
   padding: 20px;
-  height: 100vh; /* Make the header fill the entire viewport */
+  min-height: 100vh; /* Make the header fill the entire viewport */
   text-align: center;
   width:100vw - var(--sidebar-width);
   color: var(--text-color);
@@ -51,7 +52,9 @@ body {
 
 .header h1{
   color:var(--header-color);
-  font-size:60px;;
+  font-size:60px;
+  padding-right:80px;
+  padding-left:80px;
 }
 
 .header h3{
@@ -59,6 +62,14 @@ body {
   color:#ffffff;
   font-weight: 400;
 
+}
+
+.spacer {
+  height: 50px;
+}
+
+.spacer2 {
+  height: 20px;
 }
 
 .buttons {
@@ -98,10 +109,16 @@ body {
 
 p{
   margin-left:15px;
+  margin-right:15px;
+  margin-bottom: 25px;
+  margin-top:25px;
 }
 
 .subtitle {
   margin-left:15px;
+  margin-top:35px;
+  margin-bottom: 15px;
+  font-size:25px;
 }
 
 img{
@@ -111,13 +128,15 @@ img{
 /*CONTENT*/
 .content {
   margin-left: var(--sidebar-width);
-  padding: 20px;
-  padding-right: 0px;
-  margin-right:0px;
   box-sizing: border-box;
   background-color: var(--general-bg-color);
   margin-bottom:0px;
-  padding-bottom: 0px;;
+}
+
+.content2{
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+
 }
   
 section {
@@ -126,13 +145,22 @@ section {
 }
   
   
-  section h2 {
-    text-align: center;
-    margin-right:0px;
-    font-size: 25px;
-    padding-bottom: 5px;
-  }
+section h2 {
+  text-align: center;
+  margin-right:0px;
+  font-size: 40px;
+  padding-bottom: 5px;
+  margin-top: 50px;
+}
   
+
+.img {
+  width: 100%;
+  max-width: 400px;
+  display: block; /* Makes sure margin:auto works */
+  margin: 20px auto; /* Centers image horizontally */
+
+}
 
 
 /* Team Section */
@@ -140,58 +168,69 @@ section {
 .team-members {
   display: flex;
   justify-content: center;
-  gap: 20px; /* Spacing between team members */
+  gap: 30px; /* Spacing between team members */
   flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  margin-top:10vh;
+  width:100%;
 }
 
 .team-member {
-  margin-left: var(--sidebar-width); /* Align with the sidebar */
   max-width: 300px;
   text-align: center;
 }
 
 .member-image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 15px;
   background-color: #d3d3d3; /* Placeholder background */
-  border-radius: 50%; /* Circular image */
+  border-radius: 50%; /* Makes the container circular */
+  overflow: hidden; /* Ensures images don't go outside the circle */
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Helps with absolute positioning inside */
 }
+
+.member-image img {
+  position: absolute; /* Allows perfect centering */
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images fully fill the circle */
+  transform: translate(-50%, -50%); /* Centers the image inside the div */
+  border-radius: 50%;
+  display: block; /* Removes extra spacing below images */
+  margin:0;
+  padding:0;
+}
+
 
 /* Team Section */
 .team {
   margin-bottom: -30px;
-  height: 100vh;
+  padding-bottom:50px;
+  min-height: 100vh;
   background-color: var(--team-color-bg); /* Green background */
   color: white;
   text-align: center;
-  margin-left:-175px;
-  padding-left:0px;
   position: relative;
 }
 
-
 .team h2 {
-  margin-left: var(--sidebar-width);
-  font-size: 2rem;
   text-decoration: none; /* Ensures no underline */
   border: none; /* Removes any unintended border */
 }
 
 .special-thanks{
-  margin-left: var(--sidebar-width);
+  padding-bottom: 10px;
 }
 /* Apply to all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.spacer {
-  height: 50px; /* Adds vertical space */
 }
 
 
@@ -200,7 +239,7 @@ section {
 .fade-section {
   opacity: 0; /* Fully transparent initially */
   transform: translateY(20px); /* Slight downward movement */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transitions */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transitions */
 }
 
 /* When a section is visible */
@@ -216,15 +255,18 @@ section {
 }
 
 
+
   :root {
+    --side-padding: 100px;
     --sidebar-bg: #5D7559; /* Sidebar background */
-    --header-bg: #B4CBA3; /* Header background */
+    --header-bg: #aac993; /* Header background */
     --text-color: #000000; /* Default text color */
     --button-bg: #B5ABAC; /* Button background */
     --button-hover-bg: #98BE91; /* Button hover background */
     --team-color-bg:#76A06A;
     --sidebar-width: 175px;
-    --general-bg-color:#EFF3EC;
+
+    --general-bg-color:#ededed;
     --header-color: #4B4A4A;
     --chestnut-color: #986960;
     --rose-color: #ab4e52;
