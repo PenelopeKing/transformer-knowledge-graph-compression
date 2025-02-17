@@ -42,10 +42,12 @@
                 <img class = 'img' src="graph-placeholder.png" alt="problem statement representation" >
                 
                 <p>
-                  Large language models (LLMs)–like OpenAI's ChatGPT or Meta's Llama–are incredibly powerful and have high potential in applications. However they sometimes struggle with common sense. LLMs learn from vast amounts of text, but can sometimes fail to grasp implicit relationships between concepts.
+                  Large language models (LLMs)–like OpenAI's ChatGPT or Meta's Llama–are incredibly powerful and have high potential in applications. 
+                  However they sometimes struggle with common sense. LLMs learn from vast amounts of text, but can sometimes fail to grasp implicit relationships between concepts.
                 </p>
                 <p>
-                  To help with this, data scientists use <b>knowledge graphs</b>, which are structured graph networks of information that connect concepts to each other along with their relationships. For example, how a “dog” (concept 1) “is a” (relationship) "mammal" (concept 2). 
+                  To help with this, data scientists use <b>knowledge graphs</b>, which are structured graph networks of information that connect concepts to each other along with their relationships. 
+                  For example, how a “dog” (concept 1) “is a” (relationship) "mammal" (concept 2). 
                 </p>
 
                 <img class = 'img'  src="assets/figures/example_kg.png" alt="a small knowledge graph" >
@@ -64,7 +66,8 @@
                    
                   <p>Transformers (specifically Graph Transformers) may be the solution for compressing knowledge graphs.
                     
-                  Graph Transformers are a type of deep learning model that extends the transformer architecture to work with graph structured data. It uses the power of self-attention mechanisms and graph learning to complex complex relationships between nodes in a graph.  
+                  Graph Transformers are a type of deep learning model that extends the transformer architecture to work with graph structured data. 
+                  It uses the power of self-attention mechanisms and graph learning to complex complex relationships between nodes in a graph.  
                   Although they require hefty computational power, transformers are especially great at handling long-range and complex relationships especially on large graphs.  
 
                   </p>
@@ -78,7 +81,11 @@
               <section class="fade-section" id="data">
                 <h2>THE DATA</h2>
                 <p>The graph data we are specifically working with are Common Sense Knowledge Graphs (CSKGs). 
-                  CSKGs are a specialized type of knowledge graph designed to encode general world knowledge. They play a crucial role in various applications, including reasoning, decision-making, and natural language understanding. They can assist LLMs in generating commonsense explanations beyond what is explicitly mentioned in context. And compressing CSKGs can ensure that a LLM is fed concise knowledge without redundant or irrelevant information. Addressing this challenge involves developing methods that allow models to discern which concepts are essential, ensuring that the extracted knowledge is both meaningful and useful for downstream applications.</p>
+                  CSKGs are a specialized type of knowledge graph designed to encode general world knowledge. 
+                  They play a crucial role in various applications, including reasoning, decision-making, and natural language understanding. 
+                  They can assist LLMs in generating commonsense explanations beyond what is explicitly mentioned in context. 
+                  And compressing CSKGs can ensure that a LLM is fed concise knowledge without redundant or irrelevant information. 
+                  </p>
                 <img src="data-placeholder.png" alt="Data visualization" style="width:100%;max-width:400px;">
                 <p>
                   The data we used consisted of two CSKGs: ComVE and α-NLG. 
@@ -86,12 +93,16 @@
                 
                 <details>
                   <summary><b>ComVE</b></summary>
-                  <p>In ComVE the goal is to generate explanations on why a nonsensical sentence does not make sense. Each sample comes with three reference output sentences, which are human-written explanations. The dataset has a training size of 10k, and a test and validation size of 1000.</p>
+                  <p>In ComVE the goal is to generate explanations on why a nonsensical sentence does not make sense. 
+                    Each sample comes with three reference output sentences, which are human-written explanations. 
+                    The dataset has a training size of 10k, and a test and validation size of 1000.</p>
                 </details>
                 
                 <details>
                   <summary><b>α-NLG</b></summary>
-                  <p>For α-NLG, the task is to generate a plausible explanation for what might have happened between a past and future observation, which is also known as abductive reasoning. Each sample in the dataset includes up to 5 reference outputs. This dataset has 50k training points, over 1,500 validation points, and over 3,500 test data points.</p>
+                  <p>For α-NLG, the task is to generate a plausible explanation for what might have happened between a past and future observation, 
+                    which is also known as abductive reasoning. Each sample in the dataset includes up to 5 reference outputs. 
+                    This dataset has 50k training points, over 1,500 validation points, and over 3,500 test data points.</p>
                 </details>
 
               
@@ -138,7 +149,8 @@
                     </div>
                     <h3>Quentin Callahan</h3>
                     <p>Data Science Major</p>
-                    <p>Quentin is passionate about machine learning, spicy food, reading, and making code run fast. He is interested in how graph theory can be used to make existing algorithms more efficient.</p>
+                    <p>Quentin is passionate about machine learning, spicy food, reading, and making code run fast. 
+                      He is interested in how graph theory can be used to make existing algorithms more efficient.</p>
 
                   </div>
                   <div class="team-member">
@@ -147,7 +159,8 @@
                     </div>
                     <h3>Esther Cho</h3>
                     <p>Data Science Major & Math Minor</p>
-                    <p>Esther enjoys exploring the practical applications of machine learning, especially the mathematical aspects like graph theory. In her free time, she enjoys playing volleyball and flag football, working on puzzles, and hiking new trails.</p>
+                    <p>Esther enjoys exploring the practical applications of machine learning, especially the mathematical aspects like graph theory. 
+                      In her free time, she enjoys playing volleyball and flag football, working on puzzles, and hiking new trails.</p>
 
                   </div>
                   <div class="team-member">
@@ -156,7 +169,9 @@
                     </div>
                     <h3>Penny King</h3>
                     <p>Data Science Major</p>
-                    <p>Penny enjoys exploring how graph-based algorithms can enhance areas like recommendation systems and transportation logistics. Outside of data science, she enjoys to read historical fiction novels and explore tea cultures from around the world. Learn more about her <a href="https://penelopeking.github.io/" target="_blank">here</a>.</p>
+                    <p>Penny enjoys exploring how graph-based algorithms can enhance areas like recommendation systems and transportation logistics. 
+                      She also enjoys reading historical fiction novels and exploring tea cultures from around the world. 
+                      Learn more about her <a href="https://penelopeking.github.io/" target="_blank">here</a>.</p>
                   </div>
                 </div>
 
