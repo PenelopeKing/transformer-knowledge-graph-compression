@@ -50,6 +50,10 @@ body {
   text-align: center; /* Center-align text and buttons */
 }
 
+details {
+  padding-left:50px;
+}
+
 .header h1{
   color:var(--header-color);
   font-size:60px;
