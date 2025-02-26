@@ -125,7 +125,7 @@
                 </p>
                 
                 <div style="text-align: center;">
-                  <img src="assets/figures/pipeline_kg.png" alt="Project pipeline" style="width:100%;max-width:800px;">
+                  <img src="assets/figures/overview_transparent.png" alt="Project pipeline" style="width:100%;max-width:800px;">
                 </div>
                 <p><b>1. Finding Important Information</b></p>
 
@@ -139,7 +139,29 @@
 
                   <details>
                     <summary><b>About Transformers</b></summary>
-                    <p>TODO</p>
+                    <p>
+                      Traditional NLP transformers were built to work on fully connected 
+                      and often sequential sequences. 
+                      However, graph data has a topology that is often large, 
+                      complex and does not guarantee full connectivity. 
+                      NLP transformer models largely use positional 
+                      encodings for words to ensure unique representation and 
+                      preserve distance information about each word. 
+                      This has been adapted in graph transformers by 
+                      fusing node positional features using Laplacian eigenvectors for graph data. 
+                      This technique is an effective way to encode node positional information in 
+                      complex graph data.</p>
+                    <p> 
+                      Transformers excel on large graph data due to their ability to capture 
+                      long-range dependencies and complex relationships between nodes, 
+                      thanks to the self-attention mechanism that considers all node interactions simultaneously. 
+                      This global receptive field allows them to effectively model intricate structures 
+                      and dependencies that traditional Graph Neural Networks (GNNs) struggle with due to 
+                      limited neighborhood aggregation. 
+                      Additionally, transformers are highly parallelizable and scalable, 
+                      making them well-suited for processing large graphs efficiently, 
+                      especially when combined with sparse attention techniques to handle graph sparsity.
+                    </p>
                   </details>
 
                 <p><b>3. Turning Connections into Text</b></p>
