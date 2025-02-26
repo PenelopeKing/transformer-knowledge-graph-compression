@@ -42,8 +42,11 @@
                 <img class = 'img' src="graph-placeholder.png" alt="problem statement representation" >
                 
                 <p>
-                  Large language models (LLMs)–like OpenAI's ChatGPT or Meta's Llama–are incredibly powerful and have high potential in applications. 
-                  However they sometimes struggle with common sense. LLMs learn from vast amounts of text, but can sometimes fail to grasp implicit relationships between concepts.
+                  Our project tackles a fundamental challenge in AI: teaching machines common sense. 
+                  Specifically we are exploring how Large Language Models (LLM) deal with common sense and intuition.
+                  Commonsense typically comes easily to humans. 
+                  While humans naturally understand that "dropping a glass cup will break it," 
+                  machines struggle with this type of intuitive knowledge. 
                 </p>
                 <p>
                   To help with this, data scientists use <b>knowledge graphs</b>, which are structured graph networks of information that connect concepts to each other along with their relationships. 
@@ -57,8 +60,10 @@
 
                 
                 <p>
-                  Processing them and using them to train LLMs is slow, expensive, and inefficient. 
-                  <em>So, how can we compress these knowledge graphs to be smaller, faster, and still effective at teaching common sense to LLMs?
+                  Feeding all this information into LLMs can overwhelm them, leading to confusion and poor performance. 
+                  This mirrors much like how humans also get overwhelm with a huge overflow of information.
+ 
+                  <em>So, how can we compress these knowledge graphs to be smaller and still effective at teaching common sense to LLMs?
                   </em>
                   </p>
 
@@ -73,7 +78,7 @@
                   </p>
 
                   <p>
-                    Being able to feed commonsense into LLMs in a more efficient and effective manner through compressed knowledge graphs can lead to better virtual assistants, improved AI decision making, and more natural interactions with technology.
+                    Being able to feed commonsense into LLMs in a more effective manner through compressed knowledge graphs can lead to better virtual assistants, improved AI decision making, and more natural interactions with technology.
                   </p>
                 
             
@@ -112,30 +117,59 @@
               <section class="fade-section" id="project">
                 <h2>THE PROJECT</h2>
                 <h3 class="subtitle">Methods</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
+                <p>
+                  We aimed to help AI understand common sense better by making large collections of knowledge easier to handle. Below is a general outline of how our methodology works:
+                </p>
+                
+                <div style="text-align: center;">
+                  <img src="assets/figures/pipeline_kg.png" alt="Project pipeline" style="width:100%;max-width:800px;">
+                </div>
+                <p><b>1. Finding Important Information</b></p>
 
-                  Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
-                  
-                  Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.</p>
-                <h3 class="subtitle">Results</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
+                <p>We started by picking out the key ideas from a sentence. For example, from "A person cannot walk across water because water is not solid," the important words are "person," "walk," "water," and "solid." We then looked for related ideas connected to these words in the knowledge graph.
+                </p>
 
-                  Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
-                  
-                  Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.</p>
-                <img src="results-placeholder.png" alt="Results visualization" style="width:100%;max-width:400px;">
-                  <p>
+                <p><b>2. Compression: Choosing the Best Connections</b></p>
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta, ligula eget cursus ullamcorper, sem lectus finibus tellus, sed suscipit arcu enim feugiat lectus. Etiam eu erat nec sem fermentum molestie vitae ut turpis. Integer ut orci commodo, facilisis odio sed, tincidunt mauris. Nulla luctus nisl eget erat sollicitudin vestibulum. Curabitur vel ipsum vulputate, laoreet dolor ac, porttitor lacus. Donec blandit metus ut est auctor, non tincidunt orci ornare. Praesent condimentum ligula ac neque placerat tristique. Nullam quis varius diam. Aliquam erat volutpat.
-
-                    Integer at accumsan diam, id placerat tortor. Nulla tristique arcu id est vehicula, et tempus turpis mattis. Mauris placerat id massa vitae imperdiet. In mollis gravida nibh. Vestibulum finibus massa nec erat iaculis, at ultricies eros maximus. Nullam placerat tellus sed enim elementum elementum. Morbi a nunc et eros dictum sodales. Sed pellentesque efficitur maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam et congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur pretium luctus mauris quis tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin sodales nulla eros. Proin fringilla ut lacus porta feugiat.
-                    
-                    Proin ultrices maximus accumsan. Curabitur fringilla nec elit in semper. Proin quis lectus vitae enim fermentum porta in eu diam. Aliquam pharetra convallis tortor sagittis consectetur. Sed porta elit sed orci eleifend, vel mattis nulla aliquam. Mauris convallis enim vitae sem rhoncus tristique. Aliquam lacinia purus vel metus mattis ullamcorper. Proin tortor ligula, consectetur ac auctor ac, hendrerit suscipit dolor. Aliquam erat volutpat. Nullam finibus massa ac blandit molestie. Curabitur commodo, libero eget efficitur pharetra, eros nisl ullamcorper augue, vitae vulputate lorem ipsum ut velit.
-
+                <p>We used a special model called a graph transformer to decide which connections were the most important. Think of it like a highlighter that picks out the most relevant ideas while ignoring less useful details. This helps the computer focus on what really matters for understanding the meaning.
                   </p>
 
+                  <details>
+                    <summary><b>About Transformers</b></summary>
+                    <p>TODO</p>
+                  </details>
+
+                <p><b>3. Turning Connections into Text</b></p>
+                <p>Instead of just feeding the computer a list of words, we turned the connections into short text explanations. This gave the computer more context and helped it understand the relationships better.
+
+                </p>
+
+                <p><b>4. Training the LLM</b></p>
+                <p>We trained our model using two tasks:
+                </p>
+
+                <p style="margin-left:50px;"><b>Explaining Nonsense:</b> We gave the model strange sentences and asked it to explain why they didn't make sense.                </p>
+                <p style="margin-left:50px;"><b>Guessing What Happened:</b> We showed it two events and asked it to guess what happened in between (abductive reasoning).</p>
+
+                <p><b>5. Measuring Success </b></p>
+                <p>We checked how well our model did by measuring three things:
+                </p>
+                <p style="margin-left:50px;"><b>Variety across multiple LLM generated sentences:</b> Did the LLM come up with different explanations each time?</p>
+                <p style="margin-left:50px;"><b>Variety within a singular LLM generated sentence:</b> Is there a variety of words within the generated sentences?</p>
+                <p style="margin-left:50px;"><b>Quality of LLM generated vs reference sentences:</b>  Were the explanations accurate and reasonable?                </p>
+
+                <h3 class="subtitle">Results</h3>
+                <p></p>
+                <img src="results-placeholder.png" alt="Results visualization" style="width:100%;max-width:400px;">
+                  
+
                   <h3 class="subtitle">Conclusion</h3>
-                  <p>TEXT HERE</p>
+                  <p>Ulimately the goal of effective compression of common sense knowledge graphs is not just about teaching AI to “know” more, but how to “understand” more intelligently and intuitively. 
+                  </p>
+                    <p>
+                    Effectively incorporating common sense knowledge in LLMs can lead to smarter virtual assitants that can better understand user intent. 
+                    As well as improved AI decision making for more accurate and logical responses. It can also allow machines to interact more naturally for human thinking and logic, specifically when it comes to the nuances of human intuition.
+                  </p>
 
               </section>
               </div>
