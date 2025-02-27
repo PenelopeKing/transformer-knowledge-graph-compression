@@ -258,6 +258,23 @@ section h2 {
   transform: translateY(20px); /* Slight downward movement */
 }
 
+.image-container {
+  margin-top:20px;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+.probimg {
+  width: calc(33.33% - 10px); /* Adjust width to account for margins */
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin: 0 15px; /* Exact control over spacing between images */
+}
 
 
   :root {
@@ -272,7 +289,7 @@ section h2 {
 
     --general-bg-color:#ffffff;
     --header-color: #4B4A4A;
-    --chestnut-color: #986960;
+    --chestnut-color: #006400;
     --rose-color: #ab4e52;
     --spanish-white: #faf6ed;
     --coral-reef: #c8bea0;

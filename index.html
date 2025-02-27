@@ -42,8 +42,13 @@
               <div class = "content2" >
               <section class="fade-section" id="problem">
                 <h2>THE PROBLEM</h2>
-                <img class = 'img' src="graph-placeholder.png" alt="problem statement representation" >
-                
+
+                <div class="image-container">
+                  <img class="probimg" src="assets/figures/problem1.png" alt="problem statement 1 representation">
+                  <img class="probimg" src="assets/figures/problem2.png" alt="problem statement 2 representation">
+                  <img class="probimg" src="assets/figures/problem3.png" alt="problem statement 3 representation">
+              </div>
+
                 <p>
                   Our project tackles a fundamental challenge in AI: teaching machines common sense. 
                   Specifically we are exploring how Large Language Models (LLM) deal with common sense and intuition.
@@ -59,7 +64,7 @@
                 <img class = 'img'  src="assets/figures/example_kg.png" alt="a small knowledge graph" >
           
 
-                <p>But there’s one “big” problem: these graphs are REALLY REALLY BIG.</p>
+                <p>But there's one “big” problem: these graphs are REALLY REALLY BIG.</p>
 
                 
                 <p>
@@ -94,7 +99,6 @@
                   They can assist LLMs in generating commonsense explanations beyond what is explicitly mentioned in context. 
                   And compressing CSKGs can ensure that a LLM is fed concise knowledge without redundant or irrelevant information. 
                   </p>
-                <img src="data-placeholder.png" alt="Data visualization" style="width:100%;max-width:400px;">
                 <p>
                   The data we used consisted of two CSKGs: ComVE and α-NLG. 
                 </p>
@@ -173,15 +177,15 @@
                 <p>We trained our model using two tasks:
                 </p>
 
-                <p style="margin-left:50px;"><b>Explaining Nonsense:</b> We gave the model strange sentences and asked it to explain why they didn't make sense.                </p>
-                <p style="margin-left:50px;"><b>Guessing What Happened:</b> We showed it two events and asked it to guess what happened in between (abductive reasoning).</p>
+                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Explaining Nonsense:</b> We gave the model strange sentences and asked it to explain why they didn't make sense.                </p>
+                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Guessing What Happened:</b> We showed it two events and asked it to guess what happened in between (abductive reasoning).</p>
 
                 <p><b>5. Measuring Success </b></p>
                 <p>We checked how well our model did by measuring three things:
                 </p>
-                <p style="margin-left:50px;"><b>Variety across multiple LLM generated sentences:</b> Did the LLM come up with different explanations each time?</p>
-                <p style="margin-left:50px;"><b>Variety within a singular LLM generated sentence:</b> Is there a variety of words within the generated sentences?</p>
-                <p style="margin-left:50px;"><b>Quality of LLM generated vs reference sentences:</b>  Were the explanations accurate and reasonable?                </p>
+                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Variety across multiple LLM generated sentences:</b> Did the LLM come up with different explanations each time?</p>
+                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Variety within a singular LLM generated sentence:</b> Is there a variety of words within the generated sentences?</p>
+                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Quality of LLM generated vs reference sentences:</b>  Were the explanations accurate and reasonable?                </p>
 
                 <h3 class="subtitle">Results</h3>
                 <p></p>
@@ -204,7 +208,9 @@
                 <div class="team-members">
                   <div class="team-member">
                     <div class="member-image">
+                      <a href="https://github.com/Qcallahan" target="_blank">
                       <img src="assets/pics/quentin.jpeg" alt="Quentin Callahan">
+                    </a>
                     </div>
                     <h3>Quentin Callahan</h3>
                     <p>Data Science Major</p>
@@ -214,7 +220,9 @@
                   </div>
                   <div class="team-member">
                     <div class="member-image">
+                      <a href="https://github.com/estherch0" target="_blank">
                       <img src="assets/pics/esther.jpeg" alt="Esther Cho">
+                    </a>
                     </div>
                     <h3>Esther Cho</h3>
                     <p>Data Science Major & Math Minor</p>
@@ -224,7 +232,9 @@
                   </div>
                   <div class="team-member">
                     <div class="member-image">
+                      <a href="https://github.com/PenelopeKing" target="_blank">
                       <img src="assets/pics/penny.JPG" alt="Penny King">
+                    </a>
                     </div>
                     <h3>Penny King</h3>
                     <p>Data Science Major</p>
@@ -236,7 +246,7 @@
 
                 <div class="special-thanks">
                   
-                  <p>We would like to give a special thanks to our mentors at HDSI:</p>
+                  <p style="margin-bottom:-20px;">We would like to give a special thanks to our mentors at HDSI:</p>
                   <p><strong>Yusu Wang & Gal Mishne</strong></p>
                 </div>
               </section>
