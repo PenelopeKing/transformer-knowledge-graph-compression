@@ -107,7 +107,8 @@
                   <summary><b>ComVE</b></summary>
                   <p>In ComVE the goal is to generate explanations on why a nonsensical sentence does not make sense. 
                     Each sample comes with three reference output sentences, which are human-written explanations. 
-                    The dataset has a training size of 10k, and a test and validation size of 1000.</p>
+                    The dataset has a training size of 20k, and a test and validation size of 1000.</p>
+                    <p>Example: "We use books to tell the time" would result in the LLM generating a response like "books are used to read, not to tell the time."</p>
                 </details>
                 
                 <details>
@@ -115,7 +116,8 @@
                   <p>For α-NLG, the task is to generate a plausible explanation for what might have happened between a past and future observation, 
                     which is also known as abductive reasoning. Each sample in the dataset includes up to 5 reference outputs. 
                     This dataset has 50k training points, over 1,500 validation points, and over 3,500 test data points.</p>
-                </details>
+                    <p>Example: The LLM is fed a past action: "Clouds appeared in the sky." And a future action: "The sidewalk was wet." These input prompts would then result in a response like: "It rained."</p>
+                  </details>
 
               
               </section>
@@ -174,7 +176,7 @@
                 </p>
 
                 <p><b>4. Training the LLM</b></p>
-                <p>We trained our model using two tasks:
+                <p>We trained our a BART-Based LLM using two tasks:
                 </p>
 
                 <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Explaining Nonsense:</b> We gave the model strange sentences and asked it to explain why they didn't make sense.                </p>
@@ -183,16 +185,65 @@
                 <p><b>5. Measuring Success </b></p>
                 <p>We checked how well our model did by measuring three things:
                 </p>
-                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Variety across multiple LLM generated sentences:</b> Did the LLM come up with different explanations each time?</p>
-                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Variety within a singular LLM generated sentence:</b> Is there a variety of words within the generated sentences?</p>
-                <p style="margin-left:50px;"><b style="color:var(--chestnut-color);">Quality of LLM generated vs reference sentences:</b>  Were the explanations accurate and reasonable?                </p>
+
+                
+                <details>
+                  <summary><b style="color:var(--chestnut-color);">Variety across multiple LLM generated sentences.</b></summary>
+                    <p>Did the LLM come up with different explanations each time?</p>
+                    <p>This is also known as pairwise diversity. The metric used to measure this is known as Self-BLEU, which evaluates how a sentence is similar to other generated sentences (from the same input prompt) based on n-gram overlap.</p>
+                  </details>
+                  <details>
+                  <summary> <b style="color:var(--chestnut-color);">Variety within a singular LLM generated sentence.</b></summary>
+                  <p>Is there a variety of words within the generated sentences?</p>
+                  <p>This is also known as corpus diversity, and is measured with Entropy-k and Distinct-k. Entropy-k evaluates evenness of empirical n-gram distribution within generated sentence
+                    Distinct-k looks at the number of unique k-grams in the generated sentences and divides it by total number of generated tokens; this prevents preference towards longer sentences in the LLM's output.
+                    </p>
+                </details>
+                <details>
+                  <summary><b style="color:var(--chestnut-color);">Quality of LLM generated vs reference sentences.</b></summary>
+                  <p>Were the explanations accurate and reasonable? </p>
+                  <p>This was measured by BLEU and ROUGE, which looks specifically at <a href="https://en.wikipedia.org/wiki/Precision_and_recall" target="_blank">precision and recall</a> in the human answers with the LLM generated answers. BLEU is the precision of n-grams in the generated output against the reference text. And ROUGE is the recall of n-grams in generated output against the reference text.
+                    </p>
+              </details>
+
+              <p>
+                We trained and tested 4 types of BART-Based LLM architectures involving a mixture of compression and no compression to see how a Transformer based compression architecture would perform in comparison.
+                These 4 models were: a LLM with no knowledge graph, a LLM with an uncompressed knowledge graph, a LLM with a RGCN-compressed knowledge graph, and our LLM with a Transformer-compressed knowledge graph.
+                Our RGCN compression model is based off the research performed by <a href="https://aclanthology.org/2023.emnlp-main.37.pdf" target ="_blank">Hwang et al (2023)</a> . Further details about the Transformer model we created are discussed further in <a href="https://github.com/estherch0/artifact-directory/blob/main/report.pdf" target = "_blank">our report</a>.
+              </p>
+
 
                 <h3 class="subtitle">Results</h3>
-                <p></p>
-                <img src="assets/results.png" alt="Results visualization" style="width:100%;max-width:400px;">
-                  
+                <p>Using the table below, you can see how the 4 tested models performed with various datasets. An arrow going up indicates if having a higher number between 0 and 100 indicates better performance. And an arrow pointing down indicates the opposite. </p>
+                <div style="text-align: center;">
+                  <img src="assets/results.png" alt="Results visualization" style="width:100%;max-width:600px;">
+                </div>
+                
+                <p>The results of our experimentation resulted in a Transformer compression model that could relatively better than a simpler RGCN compression model. 
+                  However (looking at models with the same training compute time) the performance of the Transformer model is mostly observed in some diversity metrics and in our recall metric (ROUGE-L).
+                </p>
+                <p>Noteably, the Transformer model exhibits decreased accuracy in the ComVE dataset compared to the αNLG dataset likely due the innate structure of a Transformed based model. 
+                  Transformers specialize in capturing longer range relationships between different relationships between concepts, which may not be necessary for a simpler common sense reasoning task.
+                  However for an abductive reasoning task which requires the LLM to infer what happens between two events, such relationships may be more beneficial.
+                </p>
+
+                
+                <p>
+                  We also included a sneak peek into what the Transformer compression model may behave like with more time dedicated for training and tuning. 
+                  These better results in "+20k steps" indicate the potential for better performance in our Transformer model with increased training time.
+                  There is also some ambiguity of results between the baseline models (no KG and uncompressed KG) with the compressed KG models which should be addressed in further research. 
+                  Unfortunately, due to time constraints further comparison and research will have to be delegated another time.
+                </p>
 
                   <h3 class="subtitle">Conclusion</h3>
+
+                  <p>
+                    The varying performance of our model at this stage of our research right now suggests that performance in Transformer compression may be tied to task and limitations within
+                    the dataset (size, existence of long range dependencies, etc). 
+                    Transformers often perform at their peak when a dataset is larger and has long range dependencies (interactions) available for it to capture and then learn off of.
+                  </p>
+                  <p>However, our project shows that there may be benefits for employing a Transformer based architecutre for the compression of knowledge graphs. 
+                    Being able to tailor compress a knowledge graph will allow a LLM to perform at a higher level in terms of interacting with humans and understanding user intent.</p>
                   <p>Ultimately the goal of effective compression of common sense knowledge graphs is not just about teaching AI to “know” more, but how to “understand” more intelligently and intuitively. 
                   </p>
                     <p>
